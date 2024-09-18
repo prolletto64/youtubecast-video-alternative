@@ -14,7 +14,7 @@ cd youtubecast-video-alternative
 docker build -t youtubecast-video-alternative:latest .
 ```
 
-### Usage
+### Run
 
 Once the image has been built, you can create a container.
 
