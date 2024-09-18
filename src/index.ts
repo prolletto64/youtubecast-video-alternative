@@ -1,10 +1,17 @@
 import express, { Express, Request, Response } from "express";
 import { execSync } from "node:child_process";
 import fs from "fs";
+import RateLimit from "express-rate-limit";
 
 const app: Express = express();
 const port = 80;
 
+var limiter = RateLimit({
+  windowMs: 30 * 1000,
+  max: 100,
+});
+
+app.use(limiter);
 app.get("/:video", (req: Request, res: Response) => {
   if (!req.params.video.match(/^[a-z0-9_-]{11}$/i)) {
     res.statusCode = 400;
@@ -14,7 +21,7 @@ app.get("/:video", (req: Request, res: Response) => {
   try {
     console.log(`Getting video streaming link for ${req.params.video}`);
     const url = execSync(
-      `yt-dlp -g --format=best[vcodec^=avc1] ${
+      `./yt-dlp -g --format=best[vcodec^=avc1] ${
         fs.existsSync("/app/cookies.txt") ? `--cookies="/app/cookies.txt"` : ""
       } http://www.youtube.com/watch?v=${req.params.video}`
     ).toString();
