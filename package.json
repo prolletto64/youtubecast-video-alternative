@@ -1,0 +1,26 @@
+{
+  "name": "youtubecast-video-alternative",
+  "version": "0.0.1",
+  "description": "streaming only alternative to trevorsharp/youtubecast-videoserver",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "full": "yarn build && yarn start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prolletto64/youtubecast-video-alternative"
+  },
+  "author": "prolletto64",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.5",
+    "typescript": "^5.6.2"
+  }
+}
