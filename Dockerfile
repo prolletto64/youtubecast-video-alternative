@@ -1,4 +1,4 @@
-FROM node:latest-alpine as build
+FROM node:22-alpine as build
 WORKDIR /usr/src/app
 COPY ./package.json ./
 RUN npm install
@@ -6,7 +6,7 @@ COPY ./tsconfig.json ./
 COPY ./src ./
 RUN npm run build
 
-FROM node:latest-alpine
+FROM node:22-alpine
 WORKDIR /app
 COPY ./package.json ./
 RUN npm install
