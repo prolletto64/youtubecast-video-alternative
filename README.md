@@ -1,10 +1,10 @@
-# raiplaysound
+# Yotubecast video server alternative
 
 Streaming only alternative to [trevorsharp/youtubecast-videoserver](https://github.com/trevorsharp/youtubecast-videoserver)
 
-## usage
+## Usage
 
-### build
+### Build
 
 Simply clone this repo and build the image
 
@@ -14,7 +14,7 @@ cd youtubecast-video-alternative
 docker build -t youtubecast-video-alternative:latest .
 ```
 
-### usage
+### Usage
 
 Once the image has been built, you can create a container.
 
@@ -30,4 +30,11 @@ Once the image has been built, you can create a container.
                - ./cookies.txt:/app/cookies.txt
    ```
 3. Create the container running `docker compose up -d`
-4. If you want to chek the logs use `docker compose logs -f`
+
+### Logs
+
+If you want to chek the logs use `docker compose logs -f`
+
+### Stop
+
+To stop the container use `docker compose down`
