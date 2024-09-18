@@ -13,4 +13,4 @@ RUN npm install
 COPY --from=build /usr/src/app/dist/index.js ./index.js
 ARG NODE_ENV production
 EXPOSE 80
-CMD ["node","index.js]
+CMD ["node","index.js"]
